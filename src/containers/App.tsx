@@ -5,13 +5,15 @@ import { Layout } from './layout';
 import { Spinner } from '../components';
 import { ApiService } from '../services';
 import { useApi } from '../common';
+import { KUSAMA_RPC } from './constants';
+
 import Routes from './Routes';
 
 const App: React.FC = () => {
   const { isConnect, setApi, setIsConnect } = useApi();
 
   useEffect(() => {
-    const api = new ApiService('wss://kusama-rpc.polkadot.io/');
+    const api = new ApiService(KUSAMA_RPC);
     setApi(api);
 
     const subscription = api.api.isConnected.subscribe(isConnect => {
