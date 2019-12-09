@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 
-import { BaseComponentProps } from '../types';
-import { useApi } from '../common';
+import { BaseComponentProps } from '../../types';
+import { useApi } from '../../common';
 
 type FreeBalanceProps = {
   value: string;
