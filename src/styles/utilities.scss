@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-@import '~bulma/sass/utilities/_all.sass';
+@import '~bulma/sass/utilities/initial-variables.sass';
 
 $family-sans-serif: Arial, sans-serif;
 $body-family: $family-sans-serif;
@@ -16,3 +16,5 @@ $navbar-item-color: $grey;
 $navbar-item-hover-color: $grey-lighter;
 $navbar-item-active-color: $grey-lighter;
 $navbar-breakpoint: 0;
+
+@import '~bulma/bulma.sass';

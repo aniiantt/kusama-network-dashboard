@@ -1,6 +1,6 @@
 import React, { useEffect, useCallback } from 'react';
 
-import { SearchInput } from '../../components';
+import { SearchInput, PrimaryButton } from '../../components';
 import { useApi, useObservable } from '../../common';
 
 const Balances: React.FC = () => {
@@ -10,6 +10,7 @@ const Balances: React.FC = () => {
   return (
     <div>
       <SearchInput isLoading={true} />
+      <PrimaryButton>search</PrimaryButton>
       <div>{balance}</div>
     </div>
   );

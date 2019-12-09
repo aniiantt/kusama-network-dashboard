@@ -21,6 +21,4 @@ const SearchInput: React.FC<BaseComponentProps & SearchInputProps & React.HTMLPr
   );
 };
 
-// pseudo = '-webkit-search-cancel-button';
-
 export default SearchInput;
