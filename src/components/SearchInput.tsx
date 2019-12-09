@@ -7,7 +7,7 @@ type SearchInputProps = {
   isLoading: boolean;
 };
 
-const SearchInput: React.FC<BaseComponentProps & SearchInputProps> = ({
+const SearchInput: React.FC<BaseComponentProps & SearchInputProps & React.HTMLProps<HTMLInputElement>> = ({
   component: Component = 'div',
   className,
   style,
