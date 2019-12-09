@@ -2,12 +2,9 @@ import React from 'react';
 
 import { useApi } from '../common';
 
-import { Layout } from './layout';
-
 const Home: React.FC = () => {
-  const { api } = useApi();
-  console.log(api);
-  return <Layout></Layout>;
+  const { api, isConnect } = useApi();
+  return <div>哈哈哈哈</div>;
 };
 
 export default Home;
