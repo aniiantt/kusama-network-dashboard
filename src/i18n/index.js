@@ -20,7 +20,7 @@ i18n
       en: en,
       zh: zh,
     },
-    ns: ['meta'],
+    ns: ['meta', 'base'],
     interpolation: {
       escapeValue: false,
     },

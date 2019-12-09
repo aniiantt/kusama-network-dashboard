@@ -15,7 +15,7 @@ export const Placeholder = () => <SearchInput isLoading={true} placeholder="sear
 
 export const WithButton = () => (
   <div className="field has-addons">
-    <SearchInput isLoading={true} placeholder="search" />
+    <SearchInput className="is-expanded" isLoading={true} placeholder="search" />
     <div className="control">
       <PrimaryButton>Search</PrimaryButton>
     </div>
