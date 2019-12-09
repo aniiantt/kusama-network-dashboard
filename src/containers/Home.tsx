@@ -1,9 +1,13 @@
 import React from 'react';
 
+import { useApi } from '../common';
+
 import { Layout } from './layout';
 
 const Home: React.FC = () => {
-  return <Layout>哈哈哈哈</Layout>;
+  const { api } = useApi();
+  console.log(api);
+  return <Layout></Layout>;
 };
 
 export default Home;
