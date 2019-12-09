@@ -9,6 +9,6 @@ export default {
 
 export const Primary = () => (
   <div>
-    <PrimaryButton>111</PrimaryButton>
+    <PrimaryButton onClick={() => {}}>Search</PrimaryButton>
   </div>
 );

@@ -16,7 +16,7 @@ const SearchInput: React.FC<BaseComponentProps & SearchInputProps & React.HTMLPr
 }) => {
   return (
     <Component className={clsx('control', { 'is-loading': isLoading }, className)} style={style}>
-      <input className="input is-rounded" type="search" {...other} />
+      <input className="input" type="search " {...other} />
     </Component>
   );
 };

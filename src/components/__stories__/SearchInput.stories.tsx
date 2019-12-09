@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { SearchInput } from '..';
+import { SearchInput, PrimaryButton } from '..';
 
 export default {
   title: 'SearchInput',
@@ -12,3 +12,12 @@ export const Base = () => <SearchInput isLoading={false} />;
 export const Loading = () => <SearchInput isLoading={true} />;
 
 export const Placeholder = () => <SearchInput isLoading={true} placeholder="search" />;
+
+export const WithButton = () => (
+  <div className="field has-addons">
+    <SearchInput isLoading={true} placeholder="search" />
+    <div className="control">
+      <PrimaryButton>Search</PrimaryButton>
+    </div>
+  </div>
+);
