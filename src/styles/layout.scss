@@ -1,3 +1,7 @@
+html {
+  -webkit-font-smoothing: auto;
+}
+
 .viewport {
   display: flex;
   flex-direction: column;
@@ -5,7 +9,25 @@
   min-height: 100vh;
 }
 
-.site-head {
-  color: #fff;
-  // background: var(--color-theme-bg);
+.site-logo {
+  margin-top: -0.5rem;
+}
+
+.navbar-ksm {
+  margin-left: 1em;
+  width: 100%;
+  display: flex;
+  margin-left: 1em;
+  justify-content: space-between;
+}
+
+.navbar-link svg.icon * {
+  fill: #ffffff;
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar .container {
+    padding-left: 0.75em;
+  }
 }

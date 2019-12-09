@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+@import '~bulma/sass/utilities/_all.sass';
+
+$family-sans-serif: Arial, sans-serif;
+$body-family: $family-sans-serif;
+$body-color: rgba(0, 0, 0, 0.87);
+
+// navbar
+$navbar-item-hover-background-color: transparent;
+$navbar-item-color: $grey;
+$navbar-item-hover-color: $grey-lighter;
+$navbar-breakpoint: 0;
+@import '~bulma/bulma.sass';
