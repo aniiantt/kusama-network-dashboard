@@ -6,6 +6,7 @@
   "base": {
     "query_balance": "type to query",
     "balances": "Balances",
-    "search": "Search"
+    "search": "Search",
+    "cancel": "Cancel"
   }
 }

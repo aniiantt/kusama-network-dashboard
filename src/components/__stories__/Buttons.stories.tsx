@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { PrimaryButton } from '../';
+import { PrimaryButton, DefaultButton } from '../';
 
 export default {
   title: 'Buttons',
@@ -10,5 +10,11 @@ export default {
 export const Primary = () => (
   <div>
     <PrimaryButton onClick={() => {}}>Search</PrimaryButton>
+  </div>
+);
+
+export const Default = () => (
+  <div>
+    <DefaultButton onClick={() => {}}>Search</DefaultButton>
   </div>
 );

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { SearchInput, PrimaryButton } from '..';
+import { SearchInput, PrimaryButton, DefaultButton } from '..';
 
 export default {
   title: 'SearchInput',
@@ -18,6 +18,15 @@ export const WithButton = () => (
     <SearchInput className="is-expanded" isLoading={true} placeholder="search" />
     <div className="control">
       <PrimaryButton>Search</PrimaryButton>
+    </div>
+  </div>
+);
+
+export const WithCancelButton = () => (
+  <div className="field has-addons">
+    <SearchInput className="is-expanded" isLoading={true} placeholder="search" />
+    <div className="control ">
+      <DefaultButton className="is-light">Cancel</DefaultButton>
     </div>
   </div>
 );

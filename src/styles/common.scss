@@ -43,6 +43,10 @@ html {
 }
 
 @media screen and (max-width: 768px) {
+  .search-wrapper {
+    margin-top: 2rem;
+  }
+
   .search-field {
     width: 100%;
     margin-left: 1rem;
