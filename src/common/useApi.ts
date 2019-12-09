@@ -3,24 +3,24 @@ import create, { SetState, State } from 'zustand';
 import { ApiService } from '../services';
 
 interface ApiState extends State {
-  api: ApiService | null;
-  isConnect: boolean;
-  setApi(api: ApiService): void;
-  setIsConnect(isConnect: boolean): void;
+  apiService: ApiService | null;
+  isReady: boolean;
+  setApiService(api: ApiService): void;
+  setIsReady(isReady: boolean): void;
 }
 
 const [useApi] = create<ApiState>(
   (set: SetState<ApiState>): ApiState => ({
-    api: null,
-    isConnect: false,
-    setApi: api => {
+    apiService: null,
+    isReady: false,
+    setApiService: apiService => {
       set(state => {
-        state.api = api;
+        state.apiService = apiService;
       });
     },
-    setIsConnect: isConnect => {
+    setIsReady: isReady => {
       set(state => {
-        state.isConnect = isConnect;
+        state.isReady = isReady;
       });
     },
   })

@@ -10,24 +10,24 @@ import { KUSAMA_RPC } from './constants';
 import Routes from './Routes';
 
 const App: React.FC = () => {
-  const { isConnect, setApi, setIsConnect } = useApi();
+  const { isReady, setApiService, setIsReady } = useApi();
 
   useEffect(() => {
-    const api = new ApiService(KUSAMA_RPC);
-    setApi(api);
+    const apiService = new ApiService(KUSAMA_RPC);
 
-    const subscription = api.api.isConnected.subscribe(isConnect => {
-      setIsConnect(isConnect);
-    });
+    setApiService(apiService);
 
-    return () => {
-      subscription.unsubscribe();
+    const waitApiReady = async () => {
+      await apiService.waitApiReady();
+      setIsReady(true);
     };
-  }, []);
+
+    waitApiReady();
+  }, [ApiService]);
 
   return (
     <Router>
-      <Layout>{isConnect ? <Routes /> : <Spinner />}</Layout>
+      <Layout>{isReady ? <Routes /> : <Spinner />}</Layout>
     </Router>
   );
 };
