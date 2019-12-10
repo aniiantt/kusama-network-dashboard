@@ -24,7 +24,7 @@ const SearchInput: React.FC<BaseComponentProps &
     <Component className={clsx('control', { 'is-loading': isLoading }, className)} style={style}>
       <input
         className="input"
-        type="search "
+        type="search"
         onChange={e => onChange(e.target.value)}
         onKeyUp={e => {
           // press enter

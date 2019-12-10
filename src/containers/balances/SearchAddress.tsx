@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect, useCallback } from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { SearchInput, PrimaryButton, DefaultButton } from '../../components';
@@ -15,8 +15,8 @@ const SearchAddress: React.FC = () => {
         className="is-expanded"
         value={inputValue}
         onChange={value => setInputValue(value)}
-        onSearch={value => {
-          setLoading(true);
+        onSearch={() => {
+          if (inputValue) setLoading(true);
         }}
         disabled={loading}
         isLoading={loading}
@@ -28,7 +28,6 @@ const SearchAddress: React.FC = () => {
             className="is-light"
             onClick={() => {
               setLoading(false);
-              setInputValue('');
             }}
           >
             {t('base:cancel')}
@@ -36,7 +35,7 @@ const SearchAddress: React.FC = () => {
         ) : (
           <PrimaryButton
             onClick={() => {
-              setLoading(true);
+              if (inputValue) setLoading(true);
             }}
           >
             {t('base:search')}

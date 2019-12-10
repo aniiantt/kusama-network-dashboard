@@ -3,6 +3,7 @@ import React, { useEffect, useCallback } from 'react';
 import { PrimaryButton } from '../../components';
 import { useApi, useObservable } from '../../common';
 import SearchAddress from './SearchAddress';
+import BalanceCard from './BalanceCard';
 
 const Balances: React.FC = () => {
   const { apiService } = useApi();
@@ -13,7 +14,15 @@ const Balances: React.FC = () => {
       <div className="search-wrapper">
         <SearchAddress />
       </div>
-      <div>{balance}</div>
+      <div>
+        <BalanceCard title="eosssqwe12312313" />
+        <BalanceCard title="eosssqwe12312313" />
+        <BalanceCard title="eosssqwe12312313" />
+        <BalanceCard title="eosssqwe12312313" />
+        <BalanceCard title="eosssqwe12312313" />
+        <BalanceCard title="eosssqwe12312313" />
+        <BalanceCard title="eosssqwe12312313" />
+      </div>
     </div>
   );
 };

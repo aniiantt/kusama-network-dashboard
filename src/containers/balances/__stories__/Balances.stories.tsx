@@ -1,6 +1,7 @@
 import React from 'react';
 
 import SearchAddress from '../SearchAddress';
+import BalanceCard from '../BalanceCard';
 import '../../../i18n';
 
 export default {
@@ -8,4 +9,6 @@ export default {
   decorators: [(storyFn: any) => <div style={{ textAlign: 'center', padding: 160 }}>{storyFn()}</div>],
 };
 
-export const Base = () => <SearchAddress />;
+export const _SearchAddress = () => <SearchAddress />;
+
+export const _BalanceCard = () => <BalanceCard title="eieqwoeoqwe" />;

@@ -53,3 +53,22 @@ html {
     margin-right: 1rem;
   }
 }
+
+/**
+ * Card
+ */
+
+.card {
+  border: 1px solid #dadce0;
+  border-radius: 0.5rem;
+}
+
+.card-header-title {
+  font-size: 1.125rem;
+  padding: 1rem 1rem 0 1rem;
+}
+
+.card-content {
+  text-align: left;
+  padding: 0.75rem 1rem 1rem 1rem;
+}
