@@ -1,19 +1,40 @@
-import React from 'react';
+import React, { useLayoutEffect } from 'react';
 
-const BlockList: React.FC = () => {
+import { numberFormat } from '../../utils';
+import { useBlocks, useApi } from '../../common';
+
+type BlockItemProps = {
+  blockNumber: number;
+  blockHash: string;
+};
+
+const BlockItem: React.FC<BlockItemProps> = React.memo(({ blockNumber, blockHash }) => {
+  const setBlock = useBlocks(state => state.setBlock);
+  const apiService = useApi(state => state.apiService);
+
+  useLayoutEffect(() => {
+    if (!blockHash) {
+      apiService
+        ?.queryBlockDetail(blockNumber)
+        .toPromise()
+        .then(data => {
+          setBlock(data);
+        });
+    }
+  }, [blockHash, apiService, setBlock, blockNumber]);
+
   return (
     <div className="card block-card">
       <header className="card-header">
-        <p className="card-header-title">123123123和23123123123</p>
+        <p className="card-header-title">{blockHash || '-'}</p>
       </header>
       <div className="card-content">
-        2可连接4来3🏠了3🏠23423考虑将啦🏠啦3🏠 2可连接4来3🏠了3🏠23423考虑将啦🏠啦3🏠
-        2可连接4来3🏠了3🏠23423考虑将啦🏠啦3🏠 2可连接4来3🏠了3🏠23423考虑将啦🏠啦3🏠
-        2可连接4来3🏠了3🏠23423考虑将啦🏠啦3🏠 2可连接4来3🏠了3🏠23423考虑将啦🏠啦3🏠
-        2可连接4来3🏠了3🏠23423考虑将啦🏠啦3🏠 2可连接4来3🏠了3🏠23423考虑将啦🏠啦3🏠
+        <div className="block-number">
+          <div className="amount">{numberFormat(blockNumber)}</div>
+        </div>
       </div>
     </div>
   );
-};
+});
 
-export default BlockList;
+export default BlockItem;

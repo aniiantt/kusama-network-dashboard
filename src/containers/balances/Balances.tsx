@@ -29,7 +29,7 @@ const Balances: React.FC = () => {
 
   const searchHandle = useCallback(
     address => {
-      const freeBalance$ = apiService?.queryFreeBalance(address);
+      const freeBalance$ = apiService?.subscribeFreeBalance(address);
 
       // init
       setLoading(true);

@@ -132,8 +132,20 @@ html {
   margin-top: 4rem;
   font-size: 1.25rem;
   font-weight: 500;
+  margin-bottom: 2rem;
 }
 
 .block-card {
   margin-bottom: 1rem;
+  .card-header-title {
+    color: #5f6368;
+  }
+  .amount {
+    font-size: 26px;
+    color: #3c4043;
+  }
+}
+
+.blocks-load {
+  height: 25rem;
 }

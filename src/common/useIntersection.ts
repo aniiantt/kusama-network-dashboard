@@ -12,13 +12,15 @@ const useIntersection = (
         setIntersectionObserverEntry(entries[0]);
       };
 
-      const observer = new IntersectionObserver(handler, options);
+      const observer = new IntersectionObserver(handler, {
+        root: options.root,
+        threshold: options.threshold,
+        rootMargin: options.rootMargin,
+      });
       observer.observe(ref.current);
 
       return () => {
-        if (ref.current) {
-          observer.disconnect();
-        }
+        observer.disconnect();
       };
     }
     return () => {};

@@ -1,5 +1,4 @@
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 import { WsProvider, ApiRx } from '@polkadot/api';
 import { Balance } from '@polkadot/types/interfaces';
 
@@ -24,12 +23,37 @@ class ApiService {
     this.provider = new WsProvider(endpoint);
   }
 
-  public queryFreeBalance(address: string) {
+  public subscribeFreeBalance(address: string) {
     return this.api.query.balances.freeBalance<Balance>(address).pipe(
       map(freeBalance => {
         return {
           address: address,
           freeBalance: freeBalance.toString(),
+        };
+      })
+    );
+  }
+
+  public subscribeNewHeads() {
+    return this.api.rpc.chain.subscribeNewHeads().pipe(
+      map(block => {
+        return {
+          blockHash: block.hash.toHex(),
+          blockNumber: block.number.toString(),
+        };
+      })
+    );
+  }
+
+  public queryBlockDetail(blockNumber: number) {
+    return this.api.rpc.chain.getBlockHash(blockNumber).pipe(
+      switchMap(blockHash => {
+        return this.api.rpc.chain.getBlock(blockHash);
+      }),
+      map(block => {
+        return {
+          blockHash: block.block.hash.toHex(),
+          blockNumber: block.block.header.number.toString(),
         };
       })
     );
