@@ -9,6 +9,6 @@ export default {
   decorators: [(storyFn: any) => <div style={{ textAlign: 'center', padding: 160 }}>{storyFn()}</div>],
 };
 
-export const _SearchAddress = () => <SearchAddress />;
+export const _SearchAddress = () => <SearchAddress value="哈哈哈哈" loading={false} />;
 
 export const _BalanceCard = () => <BalanceCard title="eieqwoeoqwe">哈哈哈哈哈哈</BalanceCard>;

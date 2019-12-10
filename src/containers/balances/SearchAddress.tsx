@@ -3,20 +3,33 @@ import { useTranslation } from 'react-i18next';
 
 import { SearchInput, PrimaryButton, DefaultButton } from '../../components';
 
-const SearchAddress: React.FC = () => {
+type SearchAddressProps = {
+  value?: string;
+  loading?: boolean;
+  onSearch?(value: string): void;
+  onChange?(value: string): void;
+  onCancel?(value?: string): void;
+};
+
+const SearchAddress: React.FC<SearchAddressProps> = ({
+  value: inputValue = '',
+  loading = false,
+  onChange = x => x,
+  onCancel = x => x,
+  onSearch = x => x,
+}) => {
   const { t } = useTranslation();
 
-  const [loading, setLoading] = useState(false);
-  const [inputValue, setInputValue] = useState('');
+  // const [loading, setLoading] = useState(false);
 
   return (
     <div className="field has-addons search-field">
       <SearchInput
         className="is-expanded"
         value={inputValue}
-        onChange={value => setInputValue(value)}
+        onChange={value => onChange(value)}
         onSearch={() => {
-          if (inputValue) setLoading(true);
+          if (inputValue) onSearch(inputValue);
         }}
         disabled={loading}
         isLoading={loading}
@@ -27,7 +40,8 @@ const SearchAddress: React.FC = () => {
           <DefaultButton
             className="is-light"
             onClick={() => {
-              setLoading(false);
+              console.log('cancel');
+              onCancel();
             }}
           >
             {t('base:cancel')}
@@ -35,7 +49,7 @@ const SearchAddress: React.FC = () => {
         ) : (
           <PrimaryButton
             onClick={() => {
-              if (inputValue) setLoading(true);
+              if (inputValue) onSearch(inputValue);
             }}
           >
             {t('base:search')}
