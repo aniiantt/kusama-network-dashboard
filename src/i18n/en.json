@@ -10,5 +10,9 @@
     "cancel": "Cancel",
     "search_address_error": "Error! Please check your input",
     "blocks_title": "Recent Blocks"
+  },
+  "footer": {
+    "desc": "Kusama Network Dashboard",
+    "aboutme": "nxiiun@gmail.com"
   }
 }

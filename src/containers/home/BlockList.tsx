@@ -40,7 +40,7 @@ const BlockList: React.FC = () => {
   }, [needMore, observe]);
 
   return (
-    <div>
+    <div className="block-card-wrapper">
       {maxBlockNumber > 0 ? (
         Array.from(new Array(maxBlockNumber - minBlockNumber + 1)).map((_, index) => {
           const blockNumber = maxBlockNumber - index;
