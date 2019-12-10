@@ -1,13 +1,11 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 import { Observable, Subscriber } from 'rxjs';
-import { catchError, take } from 'rxjs/operators';
+import { take } from 'rxjs/operators';
 import { useTranslation } from 'react-i18next';
 
-import { PrimaryButton } from '../../components';
-import { useApi, useObservable } from '../../common';
+import { useApi } from '../../common';
 import SearchAddress from './SearchAddress';
 import BalanceCard from './BalanceCard';
-import { BaseComponentProps } from '../../types';
 
 const Balances: React.FC = () => {
   const { apiService } = useApi();
@@ -59,7 +57,7 @@ const Balances: React.FC = () => {
         }
       );
     },
-    [apiService]
+    [apiService, t]
   );
 
   return (
