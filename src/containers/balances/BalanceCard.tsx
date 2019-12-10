@@ -13,7 +13,8 @@ type BalanceCardProps = {
     address: string;
     freeBalance: string;
   }>;
-  onRemove?(address?: string): void;
+  removeKey?: number;
+  onRemove?(address?: number): void;
 };
 
 const BalanceCard: React.FC<React.PropsWithChildren<BalanceCardProps & BaseComponentProps>> = ({
@@ -21,6 +22,7 @@ const BalanceCard: React.FC<React.PropsWithChildren<BalanceCardProps & BaseCompo
   className,
   children,
   balance,
+  removeKey,
   onRemove = x => x,
   ...other
 }) => {
@@ -30,7 +32,7 @@ const BalanceCard: React.FC<React.PropsWithChildren<BalanceCardProps & BaseCompo
     <div className={clsx('card', className)} {...other}>
       <header className="card-header">
         <p className="card-header-title">{address}</p>
-        <div className="card-header-icon" onClick={() => onRemove(address)}>
+        <div className="card-header-icon" onClick={() => onRemove(removeKey)}>
           <CloseIcon />
         </div>
       </header>
