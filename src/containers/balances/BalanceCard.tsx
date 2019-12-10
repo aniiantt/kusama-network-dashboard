@@ -5,20 +5,23 @@ import { Observable } from 'rxjs';
 import { BaseComponentProps } from '../../types';
 import { useObservable } from '../../common';
 import { Amount } from '../../components';
+import { ReactComponent as CloseIcon } from '../../assets/icons/close.svg';
 
 type BalanceCardProps = {
-  title: string;
+  address: string;
   balance?: Observable<{
     address: string;
     freeBalance: string;
   }>;
+  onRemove?(address?: string): void;
 };
 
 const BalanceCard: React.FC<React.PropsWithChildren<BalanceCardProps & BaseComponentProps>> = ({
-  title,
+  address,
   className,
   children,
   balance,
+  onRemove = x => x,
   ...other
 }) => {
   const data = useObservable(balance);
@@ -26,8 +29,10 @@ const BalanceCard: React.FC<React.PropsWithChildren<BalanceCardProps & BaseCompo
   return (
     <div className={clsx('card', className)} {...other}>
       <header className="card-header">
-        <p className="card-header-title">{title}</p>
-        <button className="delete"></button>
+        <p className="card-header-title">{address}</p>
+        <div className="card-header-icon" onClick={() => onRemove(address)}>
+          <CloseIcon />
+        </div>
       </header>
       <div className="card-content">
         <Amount value={data?.freeBalance}></Amount>

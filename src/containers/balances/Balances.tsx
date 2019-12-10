@@ -82,7 +82,22 @@ const Balances: React.FC = () => {
       </div>
       <div className="balance-card-wrapper">
         {addresses.map(({ address, key, observable }) => (
-          <BalanceCard className="balance-card" title={address} key={key} balance={observable} />
+          <BalanceCard
+            onRemove={removeAddress => {
+              setAddresses(state => {
+                const filterAddresses = state.filter(({ address, observable }) => {
+                  // if(address !== removeAddress) return true
+
+                  return address !== removeAddress;
+                });
+                return filterAddresses;
+              });
+            }}
+            className="balance-card"
+            address={address}
+            key={key}
+            balance={observable}
+          />
         ))}
       </div>
     </div>
