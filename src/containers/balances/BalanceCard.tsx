@@ -1,23 +1,24 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import clsx from 'clsx';
+
+import { BaseComponentProps } from '../../types';
 
 type BalanceCardProps = {
   title: string;
 };
 
-const BalanceCard: React.FC<BalanceCardProps> = ({ title }) => {
-  const { t } = useTranslation();
-
+const BalanceCard: React.FC<React.PropsWithChildren<BalanceCardProps & BaseComponentProps>> = ({
+  title,
+  className,
+  children,
+  ...other
+}) => {
   return (
-    <div className="card">
+    <div className={clsx('card', className)} {...other}>
       <header className="card-header">
         <p className="card-header-title">{title}</p>
       </header>
-      <div className="card-content">
-        <div className="content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
-        </div>
-      </div>
+      <div className="card-content">{children}</div>
     </div>
   );
 };

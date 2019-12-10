@@ -72,3 +72,23 @@ html {
   text-align: left;
   padding: 0.75rem 1rem 1rem 1rem;
 }
+
+.balance-card-warpper {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.balance-card {
+  margin-top: 1rem;
+  width: 40rem;
+}
+
+@media screen and (max-width: 768px) {
+  .alance-card {
+    width: 100%;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}

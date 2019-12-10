@@ -4,6 +4,7 @@ import { PrimaryButton } from '../../components';
 import { useApi, useObservable } from '../../common';
 import SearchAddress from './SearchAddress';
 import BalanceCard from './BalanceCard';
+import { BaseComponentProps } from '../../types';
 
 const Balances: React.FC = () => {
   const { apiService } = useApi();
@@ -14,14 +15,14 @@ const Balances: React.FC = () => {
       <div className="search-wrapper">
         <SearchAddress />
       </div>
-      <div>
-        <BalanceCard title="eosssqwe12312313" />
-        <BalanceCard title="eosssqwe12312313" />
-        <BalanceCard title="eosssqwe12312313" />
-        <BalanceCard title="eosssqwe12312313" />
-        <BalanceCard title="eosssqwe12312313" />
-        <BalanceCard title="eosssqwe12312313" />
-        <BalanceCard title="eosssqwe12312313" />
+      <div className="balance-card-warpper">
+        <BalanceCard className="balance-card" title="eosssqwe12312313" />
+        <BalanceCard className="balance-card" title="eosssqwe12312313" />
+        <BalanceCard className="balance-card" title="eosssqwe12312313" />
+        <BalanceCard className="balance-card" title="eosssqwe12312313" />
+        <BalanceCard className="balance-card" title="eosssqwe12312313" />
+        <BalanceCard className="balance-card" title="eosssqwe12312313" />
+        <BalanceCard className="balance-card" title="eosssqwe12312313" />
       </div>
     </div>
   );

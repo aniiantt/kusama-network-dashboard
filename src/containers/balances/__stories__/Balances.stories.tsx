@@ -11,4 +11,4 @@ export default {
 
 export const _SearchAddress = () => <SearchAddress />;
 
-export const _BalanceCard = () => <BalanceCard title="eieqwoeoqwe" />;
+export const _BalanceCard = () => <BalanceCard title="eieqwoeoqwe">哈哈哈哈哈哈</BalanceCard>;
