@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 
 import { ExternalLink } from '../../components';
 import { ReactComponent as GithubIcon } from '../../assets/icons/github.svg';
+import { GITHUB_LINK } from '../constants';
 
 const Header: React.FC = () => {
   const { t } = useTranslation();
@@ -16,6 +17,7 @@ const Header: React.FC = () => {
             <img className="site-logo" src="/images/logo.svg" alt="logo" />
           </Link>
         </div>
+
         <div className="navbar-ksm">
           <div className="navbar-start">
             <NavLink to="/" exact activeClassName="is-active" className="navbar-item">
@@ -26,7 +28,7 @@ const Header: React.FC = () => {
             </NavLink>
           </div>
           <div className="navbar-end">
-            <ExternalLink to="https://github.com" className="navbar-link is-arrowless">
+            <ExternalLink to={GITHUB_LINK} className="navbar-link is-arrowless">
               <GithubIcon />
             </ExternalLink>
           </div>

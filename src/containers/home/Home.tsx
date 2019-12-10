@@ -9,11 +9,7 @@ const Home: React.FC = () => {
   return (
     <div className="container">
       <div className="sub-title">{t('base:blocks_title')}</div>
-      <div className="sss">
-        <div>
-          <BlockList />
-        </div>
-      </div>
+      <BlockList />
     </div>
   );
 };
