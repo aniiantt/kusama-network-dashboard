@@ -36,10 +36,19 @@ html {
   display: flex;
   margin-top: 5rem;
   justify-content: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .search-field {
   width: 40rem;
+  position: relative;
+}
+
+.search-error-msg {
+  width: 100%;
+  position: absolute;
+  top: -1.5rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -49,8 +58,6 @@ html {
 
   .search-field {
     width: 100%;
-    margin-left: 1rem;
-    margin-right: 1rem;
   }
 }
 
@@ -66,6 +73,10 @@ html {
 .card-header-title {
   font-size: 1.125rem;
   padding: 1rem 1rem 0 1rem;
+  overflow: hidden;
+  display: inline-block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .card-content {
@@ -73,11 +84,13 @@ html {
   padding: 0.75rem 1rem 1rem 1rem;
 }
 
-.balance-card-warpper {
+.balance-card-wrapper {
   margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .balance-card {
@@ -86,9 +99,7 @@ html {
 }
 
 @media screen and (max-width: 768px) {
-  .alance-card {
+  .balance-card {
     width: 100%;
-    margin-left: 1rem;
-    margin-right: 1rem;
   }
 }

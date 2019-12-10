@@ -7,6 +7,7 @@
     "query_balance": "type to query",
     "balances": "Balances",
     "search": "Search",
-    "cancel": "Cancel"
+    "cancel": "Cancel",
+    "search_address_error": "Error! Please check your input"
   }
 }

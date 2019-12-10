@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { SearchInput, PrimaryButton, DefaultButton } from '../../components';
@@ -6,6 +6,7 @@ import { SearchInput, PrimaryButton, DefaultButton } from '../../components';
 type SearchAddressProps = {
   value?: string;
   loading?: boolean;
+  errorMsg?: string;
   onSearch?(value: string): void;
   onChange?(value: string): void;
   onCancel?(value?: string): void;
@@ -14,16 +15,16 @@ type SearchAddressProps = {
 const SearchAddress: React.FC<SearchAddressProps> = ({
   value: inputValue = '',
   loading = false,
+  errorMsg = '',
   onChange = x => x,
   onCancel = x => x,
   onSearch = x => x,
 }) => {
   const { t } = useTranslation();
 
-  // const [loading, setLoading] = useState(false);
-
   return (
     <div className="field has-addons search-field">
+      {errorMsg && <div className="control has-text-danger search-error-msg">{errorMsg}</div>}
       <SearchInput
         className="is-expanded"
         value={inputValue}
