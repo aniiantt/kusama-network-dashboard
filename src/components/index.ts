@@ -3,4 +3,5 @@ export { default as WebsiteTitle } from './WebsiteTitle';
 export { default as Spinner } from './Spinner';
 export { default as SearchInput } from './SearchInput';
 export { default as Amount } from './Amount';
+export { default as IntersectionObserve } from './IntersectionObserve';
 export * from './button';

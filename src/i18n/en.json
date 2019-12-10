@@ -8,6 +8,7 @@
     "balances": "Balances",
     "search": "Search",
     "cancel": "Cancel",
-    "search_address_error": "Error! Please check your input"
+    "search_address_error": "Error! Please check your input",
+    "blocks_title": "Recent Blocks"
   }
 }
