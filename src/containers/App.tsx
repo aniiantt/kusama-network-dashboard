@@ -5,7 +5,7 @@ import { Layout } from './layout';
 import { Spinner } from '../components';
 import { ApiService } from '../services';
 import { useApi } from '../common';
-import { KUSAMA_RPC } from './constants';
+import { KUSAMA_RPC } from '../constants';
 
 import Routes from './Routes';
 

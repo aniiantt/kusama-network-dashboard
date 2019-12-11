@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 
 import { ExternalLink } from '../../components';
 import { ReactComponent as GithubIcon } from '../../assets/icons/github.svg';
-import { GITHUB_LINK } from '../constants';
+import { GITHUB_LINK } from '../../constants';
 
 const Header: React.FC = () => {
   const { t } = useTranslation();
