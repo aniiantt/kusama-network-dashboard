@@ -30,3 +30,5 @@
 - 有性能优化的考量
 - 使用 git hooks 规范代码和 git messages
 - 使用 rxjs 处理异步
+- 使用 intersectionobserver 实现无限滚动
+- 响应式设计
