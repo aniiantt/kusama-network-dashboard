@@ -22,7 +22,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "deploy": "now ./out --static --no-clipboard --token=$NOW_TOKEN --public"
   },
   "eslintConfig": {
     "extends": "react-app"
